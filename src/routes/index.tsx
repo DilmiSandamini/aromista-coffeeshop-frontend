@@ -21,6 +21,7 @@ const CustomerContact = lazy(() => import("../pages/customer/CustomerContact"))
 const AdminOrdersManage = lazy(() => import("../pages/admin/AdminOrder"))
 const AdminSettings = lazy(() => import("../pages/admin/AdminSettings"))
 const BaristorDashboard = lazy(() => import("../pages/baristor/BaristorDashboard"))
+const AdminBooking = lazy(() => import("../pages/admin/AdminBooking"))
 
 type RequireAuthTypes = { children: ReactNode; roles?: string[] }
 
@@ -104,6 +105,7 @@ export default function Router() {
             <Route path="/admin/items" element={<AdminItemManage />} />
             <Route path="/admin/orders" element={<AdminOrdersManage />} />
             <Route path="/admin/others" element={<AdminOthers />} />
+            <Route path="/admin/bookings" element={<AdminBooking />} />
             <Route path="/admin/settings" element={<AdminSettings />} />
 
           </ Route>

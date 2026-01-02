@@ -28,6 +28,7 @@ export default function AdminPanel() {
     { name: "Item Manage", path: "/admin/items", icon: <FaCoffee /> },
     { name: "Order Manage", path: "/admin/orders", icon: <FaClipboardList /> },
     { name: "Others", path: "/admin/others", icon: <FaEllipsisH /> },
+    { name: "Bookings", path: "/admin/bookings", icon: <FaClipboardList /> },
     { name: "Settings", path: "/admin/settings", icon: <FaCogs /> },
   ];
 

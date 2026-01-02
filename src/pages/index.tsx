@@ -19,7 +19,6 @@ export default function Index() {
       <nav className="relative z-50 flex items-center justify-between px-6 md:px-12 py-5 bg-white/95 backdrop-blur-md shadow-md sticky top-0">
         <div className="text-2xl font-serif font-bold text-[#3e2723] tracking-tighter flex items-center gap-2">
           <span className="bg-[#4a6741] text-white px-2 py-1 rounded">AROMISTA</span>
-          <span className="text-[#4a6741]">.</span>
         </div>
         
         {/* Desktop Menu */}

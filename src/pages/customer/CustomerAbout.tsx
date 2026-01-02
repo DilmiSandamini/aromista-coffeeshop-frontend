@@ -12,10 +12,9 @@ export default function About() {
           backgroundImage: `url('/src/assets/image/top-view-tasty-coffee-with-coffee-beans.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundAttachment: 'fixed' // මෙය මගින් පින්තූරය ස්ථාවරව තබයි
+          backgroundAttachment: 'fixed' 
         }}
       >
-        {/* අකුරු පැහැදිලිව පෙනීමට overlay එකක් */}
         <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
       </div>
 

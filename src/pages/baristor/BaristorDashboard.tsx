@@ -9,11 +9,9 @@ export default function BaristorDashboard() {
     const [loading, setLoading] = useState(true);
     const [newOrderCount, setNewOrderCount] = useState(0);
 
-    // දත්ත ලබාගැනීම (Active orders පමණක් පෙන්වයි)
     const fetchOrders = async () => {
         try {
             const res = await getAllOrdersForBaristor();
-            // PENDING සහ PROCESSING තත්ත්වයේ ඇති ඇණවුම් පමණක් පෙන්වයි
             const activeOrders = res.orders.filter((o: any) => 
                 o.status === "PENDING" || o.status === "PROCESSING"
             );
@@ -46,8 +44,7 @@ export default function BaristorDashboard() {
             await updateOrderStatus(orderId, status);
             showAlert({ icon: "success", title: `Order set to ${status}` });
             
-            // සාර්ථක වූ පසු ක්ෂණිකව ලිස්ට් එක Refresh කරයි
-            // COMPLETED දුන් විට එය activeOrders වලින් ඉවත් වේ
+            
             fetchOrders(); 
         } catch (error) {
             showAlert({ icon: "error", title: "Update Failed" });
@@ -78,7 +75,6 @@ export default function BaristorDashboard() {
                 </div>
             </header>
 
-            {/* Orders List Container - ඇණවුම් පහළට Load වේ */}
             <div className="relative z-10 max-w-4xl mx-auto space-y-6 overflow-y-auto max-h-[70vh] pr-4 custom-scrollbar">
                 <AnimatePresence mode="popLayout">
                     {orders.map((order, index) => (
@@ -105,7 +101,6 @@ export default function BaristorDashboard() {
                                 </div>
                             </div>
 
-                            {/* Items Section - පේළියට පෙන්වයි */}
                             <div className="flex-1 space-y-2 border-l border-white/5 pl-8 hidden md:block">
                                 {order.items.map((i: any, idx: number) => (
                                     <div key={idx} className="flex items-center gap-3">

@@ -7,7 +7,7 @@ import { useCart } from "../../context/CartContext";
 import { CartDrawer } from "../CartDrawer";
 
 export default function CustomerHeader() {
-  const { user, setUser } = useAuth(); // User විස්තර ලබා ගැනීම
+  const { user, setUser } = useAuth(); 
   const navigate = useNavigate();
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -31,7 +31,6 @@ export default function CustomerHeader() {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     
-    // Dropdown එකෙන් එළියේ ක්ලික් කළොත් එය වසා දැමීමට
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsProfileOpen(false);
@@ -160,7 +159,6 @@ export default function CustomerHeader() {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay කලින් පරිදිම තබා ගන්න */}
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </header>
   );

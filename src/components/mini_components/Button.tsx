@@ -25,11 +25,9 @@ export function Button({ children, onClick, type = "button", variant = "primary"
     if (disabled) return;
     setIsSteaming(true);
     onClick?.();
-    // තත්පර 1කට පස්සේ දුම නතර කරන්න
     setTimeout(() => setIsSteaming(false), 1000);
   };
 
-  // දුම් රේඛා නිර්මාණය කිරීම සඳහා array එකක්
   const steamLines = [0, 1, 2];
 
   return (

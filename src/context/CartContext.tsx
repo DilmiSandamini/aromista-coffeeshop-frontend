@@ -15,7 +15,6 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     const [cartItems, setCartItems] = useState<any[]>([]);
 
-    // අලුතින් Item එකක් එකතු කිරීම හෝ තිබෙන එකක Qty වැඩි කිරීම
     const addToCart = (item: any) => {
         setCartItems((prev) => {
             const itemId = item._id || item.item;
@@ -28,7 +27,6 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         showAlert({ icon: "success", title: "Added to Tray", text: `${item.name} is ready.` });
     };
 
-    // Drawer එක ඇතුළතදී ප්‍රමාණයන් පමණක් වෙනස් කිරීම (No Alert)
     const updateQuantity = (id: string, delta: number) => {
         setCartItems((prev) =>
             prev.map((i) => {
