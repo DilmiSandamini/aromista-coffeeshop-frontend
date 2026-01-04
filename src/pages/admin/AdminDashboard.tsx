@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FaUsers, FaCoffee, FaTruck, FaMoneyBillWave, FaChartLine, FaCalendarCheck } from "react-icons/fa"; // FaCalendarCheck අලුතින් එක් කළා
+import { FaUsers, FaCoffee, FaTruck, FaMoneyBillWave, FaChartLine, FaCalendarCheck } from "react-icons/fa"; 
 import { getAllOrdersForAdmin } from "../../service/order";
 import { getAllUsers } from "../../service/auth";
 import { getAllItemsForAdmin } from "../../service/item";
-import { getAllBookings } from "../../service/booking"; // මෙය import කරගන්න
+import { getAllBookings } from "../../service/booking";
 import { Table } from "../../components/mini_components/Table";
 
 export default function AdminDashboard() {
@@ -13,7 +13,7 @@ export default function AdminDashboard() {
         totalItems: 0,
         pendingOrders: 0,
         totalRevenue: 0,
-        totalBookings: 0 // මෙයට අගය ලබා දෙන්නෙමු
+        totalBookings: 0 
     });
     const [recentOrders, setRecentOrders] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
@@ -22,7 +22,6 @@ export default function AdminDashboard() {
         const fetchDashboardData = async () => {
             try {
                 setLoading(true);
-                // Promise.all එකට getAllBookings() එක් කළා
                 const [ordersRes, usersRes, itemsRes, bookingsRes] = await Promise.all([
                     getAllOrdersForAdmin(),
                     getAllUsers(),
@@ -56,13 +55,11 @@ export default function AdminDashboard() {
         fetchDashboardData();
     }, []);
 
-    // Cards array එකට Booking Card එක එක් කළා
     const cards = [
         { label: "Revenue", value: `LKR ${stats.totalRevenue.toLocaleString()}`, icon: <FaMoneyBillWave />, color: "bg-emerald-500", trend: "Lifetime" },
         { label: "Artisan Items", value: stats.totalItems, icon: <FaCoffee />, color: "bg-[#4a6741]", trend: "In Menu" },
         { label: "Active Users", value: stats.totalUsers, icon: <FaUsers />, color: "bg-blue-500", trend: "Total" },
         { label: "Pending Orders", value: stats.pendingOrders, icon: <FaTruck />, color: "bg-amber-500", trend: "To Process" },
-        // නව Booking Card එක
         { label: "Total Bookings", value: stats.totalBookings, icon: <FaCalendarCheck />, color: "bg-[#bc8a5f]", trend: "Reservations" },
     ];
 
@@ -78,7 +75,6 @@ export default function AdminDashboard() {
                 </p>
             </div>
 
-            {/* Stats Grid - මෙය Responsive grid එකට හරවා ඇත */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                 {cards.map((card, i) => (
                     <motion.div 
@@ -130,7 +126,7 @@ export default function AdminDashboard() {
                 {/* System Pulse Card */}
                 <div className="space-y-6">
                     <h2 className="text-xl font-serif font-bold text-[#3e2723] px-4">System Pulse</h2>
-                    <div className="bg-[#3e2723] rounded-[2.5rem] p-10 text-white shadow-2xl relative overflow-hidden group min-h-[350px]">
+                    <div className="bg-[#3e2723] rounded-[2.5rem] p-10 text-white shadow-2xl relative overflow-hidden group">
                         <FaCoffee className="absolute -right-10 -bottom-10 text-white/5 rotate-12 group-hover:scale-125 transition-transform duration-1000" size={250} />
                         
                         <div className="relative z-10 h-full flex flex-col justify-between">

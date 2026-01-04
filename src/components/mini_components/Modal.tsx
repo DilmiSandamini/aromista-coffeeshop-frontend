@@ -12,7 +12,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
     return (
         <AnimatePresence>
             {isOpen && (
-                <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-4">
+                <div className="fixed inset-0 flex items-end sm:items-center justify-center p-0 sm:p-4">
                     {/* Backdrop - Smooth Blur Effect */}
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -41,7 +41,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
                             /* Desktop Styles */
                             sm:max-w-lg sm:rounded-[40px]
                             /* Mobile Styles - Bottom Sheet look */
-                            max-sm:rounded-t-[32px] max-sm:max-h-[92vh]
+                             max-sm:max-h-[92vh]
                         `}
                     >
                         {/* Mobile Handle Bar (Optional visual cue) */}

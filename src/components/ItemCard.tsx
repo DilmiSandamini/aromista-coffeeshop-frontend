@@ -1,6 +1,4 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { FaCartPlus, FaBan } from "react-icons/fa";
 import { Button } from "../components/mini_components/Button";
 import { useCart } from "../context/CartContext";
 
@@ -28,7 +26,7 @@ export const ItemCard = ({ item, index }: ItemCardProps) => {
             border md:border-none border-stone-100 rounded-[2.5rem] md:rounded-none shadow-sm md:shadow-none`}
     >
       {/* Image Section */}
-      <div className="w-full md:w-[42%] h-[280px] md:h-[450px] relative overflow-hidden group">
+      <div className="w-full md:w-[42%] relative overflow-hidden group">
         <img
           src={
             item.imageUrl ||

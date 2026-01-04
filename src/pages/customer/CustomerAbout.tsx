@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { FaHistory, FaLeaf, FaHeart, FaCoffee } from "react-icons/fa";
 
@@ -36,7 +35,7 @@ export default function About() {
             <h1 className="text-5xl md:text-8xl font-serif font-bold text-white leading-tight">
               Brewed with <br /> <span className="italic text-[#FAF9F6]">Passion.</span>
             </h1>
-            <div className="w-20 h-[1px] bg-[#bc8a5f] mx-auto mt-10"></div>
+            <div className="w-20 bg-[#bc8a5f] mx-auto mt-10"></div>
           </motion.div>
 
           {/* Story Blocks */}

@@ -25,6 +25,7 @@ export default function Register() {
 
     try {
       const data = await register(fullname, email, confirmPassword, Number(contactNumber));
+      console.log("Registration successful:", data);
       alert(`Registration successful! Welcome to Aromista.`);
       navigate("/login");
     } catch (err) {

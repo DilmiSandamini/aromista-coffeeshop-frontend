@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaPlus, FaSearch, FaCheck, FaClock, FaTimes, FaTrash, FaMinus, FaEdit, FaCoffee } from "react-icons/fa";
 import { Table } from "../../components/mini_components/Table";
 import { Button } from "../../components/mini_components/Button";
-import api from "../../service/api";
 import { showAlert } from "../../components/mini_components/Swail";
 import { AnimatePresence, motion } from "framer-motion";
 import { 
@@ -181,7 +180,7 @@ export default function AdminOrdersManage() {
 
             <AnimatePresence>
                 {isModalOpen && (
-                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-[#1b110b]/60 backdrop-blur-sm">
+                    <div className="fixed inset-0 flex items-center justify-center p-6 bg-[#1b110b]/60 backdrop-blur-sm">
                         <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }} className="bg-white rounded-[2.5rem] p-10 w-full max-w-7xl max-h-[95vh] overflow-y-auto shadow-2xl relative">
                             <h2 className="text-2xl font-serif font-bold text-[#3e2723] mb-8 flex items-center gap-3"><FaCoffee/> {editMode ? "Modify Order" : "Manual Order Entry"}</h2>
                             
@@ -205,7 +204,7 @@ export default function AdminOrdersManage() {
                                             </div>
                                         </>
                                     ) : (
-                                        <div className="mt-4 p-6 bg-stone-50 rounded-[1.5rem] border border-stone-100">
+                                        <div className="mt-4 p-6 bg-stone-50 border border-stone-100">
                                             <p className="text-[10px] font-black text-stone-400 uppercase mb-2">Customer Locked</p>
                                             <p className="font-bold text-lg text-[#3e2723]">{selectedUser?.fullname}</p>
                                             <p className="text-xs text-stone-500">{selectedUser?.email}</p>
@@ -238,7 +237,7 @@ export default function AdminOrdersManage() {
                                 </div>
 
                                 {/* Cart Summary */}
-                                <div className="bg-stone-50 rounded-[2rem] p-8 border border-stone-100 flex flex-col h-full">
+                                <div className="bg-stone-50 p-8 border border-stone-100 flex flex-col h-full">
                                     <h3 className="text-sm font-black uppercase tracking-widest text-[#3e2723] mb-6 border-b border-stone-200 pb-4">Order Summary</h3>
                                     <div className="flex-1 space-y-4 overflow-y-auto max-h-80 pr-2">
                                         {adminCart.map(item => (

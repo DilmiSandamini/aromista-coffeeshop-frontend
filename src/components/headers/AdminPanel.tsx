@@ -13,7 +13,7 @@ import { useAuth } from "../../context/authContext";
 export default function AdminPanel() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { user, setUser } = useAuth();
+  const { setUser } = useAuth();
 
   const handleLogout = () => {
     setUser(null);
@@ -40,7 +40,7 @@ export default function AdminPanel() {
         </h1>
       </div>
 
-      <nav className="flex-grow mt-6 px-4 space-y-2">
+      <nav className=" mt-6 px-4 space-y-2">
         {menuItems.map((item) => (
           <Link
             key={item.name}

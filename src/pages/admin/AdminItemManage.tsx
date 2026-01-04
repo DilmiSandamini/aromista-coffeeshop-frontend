@@ -171,7 +171,7 @@ export default function AdminItemManage() {
                                 <div className="flex items-center gap-4">
                                     <img
                                         src={item.imageUrl || "https://via.placeholder.com/100"}
-                                        className="w-[50px] h-[50px] object-cover rounded-xl shadow-sm group-hover:scale-105 transition-transform"
+                                        className=" object-cover rounded-xl shadow-sm group-hover:scale-105 transition-transform"
                                         alt={item.name}
                                     />
                                     <div>
@@ -254,7 +254,7 @@ export default function AdminItemManage() {
                         <label className="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] ml-1">
                             Item Image Content
                         </label>
-                        <div className="relative group w-full bg-gray-50 rounded-[2rem] overflow-hidden border-2 border-dashed border-gray-200 transition-all hover:border-[#4a6741]">
+                        <div className="relative group w-full bg-gray-50 overflow-hidden border-2 border-dashed border-gray-200 transition-all hover:border-[#4a6741]">
                             <div className="aspect-video flex items-center justify-center relative">
                                 {postPreview ? (
                                     <img src={postPreview} className="w-full h-full object-cover" alt="Preview" />

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaPlus, FaEdit, FaTrashAlt, FaTag } from "react-icons/fa";
 import { Button } from "../../components/mini_components/Button";
 import { Table } from "../../components/mini_components/Table";
@@ -33,7 +33,7 @@ export default function AdminOthers() {
         try {
             setLoading(true);
             const data = await getAllCategories();
-            setCategories(data.categories || data); // සර්වර් එකෙන් එන structure එක අනුව පරීක්ෂා කරන්න
+            setCategories(data.categories || data);
         } catch (error) {
             showAlert({ icon: "error", title: "Failed to fetch categories" });
         } finally {
@@ -91,7 +91,7 @@ export default function AdminOthers() {
     const handleToggleStatus = async (id: string) => {
         try {
             await toggleCategoryStatus(id);
-            fetchCategories(); // Table එක refresh කරන්න
+            fetchCategories(); 
         } catch (error: any) {
             showAlert({ icon: "error", title: error.response?.data?.message || "Status toggle failed" });
         }
@@ -204,13 +204,13 @@ export default function AdminOthers() {
                     )}
 
                     {activeTab === "reports" && (
-                        <div className="p-20 text-center bg-white rounded-[32px] border-2 border-dashed border-stone-100">
+                        <div className="p-20 text-center bg-white border-2 border-dashed border-stone-100">
                             <p className="text-stone-400 italic font-serif">Analytics and reporting module coming soon...</p>
                         </div>
                     )}
 
                     {activeTab === "offers" && (
-                        <div className="p-20 text-center bg-white rounded-[32px] border-2 border-dashed border-stone-100">
+                        <div className="p-20 text-center bg-white border-2 border-dashed border-stone-100">
                              <p className="text-stone-400 italic font-serif">Promotions and seasonal offers module coming soon...</p>
                         </div>
                     )}

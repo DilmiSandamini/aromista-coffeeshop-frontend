@@ -7,7 +7,7 @@ type TableProps = {
 
 export const Table = ({ headers, children }: TableProps) => {
   return (
-    <div className="bg-white rounded-[32px] shadow-sm border border-stone-100 overflow-hidden">
+    <div className="bg-white shadow-sm border border-stone-100 overflow-hidden">
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead className="bg-[#faf7f2] border-b border-stone-200">

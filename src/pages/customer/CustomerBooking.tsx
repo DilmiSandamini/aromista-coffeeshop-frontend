@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaUsers, FaCalendarAlt, FaClock, FaCheckCircle, FaExclamationTriangle } from "react-icons/fa";
+import { FaUsers, FaCheckCircle } from "react-icons/fa";
 import { showAlert } from "../../components/mini_components/Swail";
 import { createBooking, getBookedTables } from "../../service/booking";
 
@@ -71,11 +71,11 @@ export default function CustomerBooking() {
             </div>
 
             <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="relative z-10 w-full max-w-4xl bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-[2.5rem] mb-10 flex flex-wrap items-end justify-center gap-8 shadow-2xl">
-                <div className="flex-1 min-w-[200px] space-y-2">
+                <div className="flex-1 space-y-2">
                     <label className="text-[10px] font-black uppercase text-[#bc8a5f] tracking-[0.2em] italic">Pick a Date</label>
                     <input type="date" className="w-full bg-white/90 rounded-2xl px-5 py-4 outline-none" onChange={(e) => setBookingDate(e.target.value)} min={new Date().toISOString().split('T')[0]} />
                 </div>
-                <div className="flex-1 min-w-[200px] space-y-2">
+                <div className="flex-1 space-y-2">
                     <label className="text-[10px] font-black uppercase text-[#bc8a5f] tracking-[0.2em] italic">Set Time</label>
                     <input type="time" className="w-full bg-white/90 rounded-2xl px-5 py-4 outline-none" onChange={(e) => setBookingTime(e.target.value)} />
                 </div>
@@ -85,7 +85,7 @@ export default function CustomerBooking() {
                 </div>
             </motion.div>
 
-            <div className={`relative z-10 w-full max-w-5xl aspect-[16/9] bg-white/5 backdrop-blur-md border border-white/10 rounded-[3.5rem] p-6 shadow-inner transition-all duration-700 ${(!bookingDate || !bookingTime) ? 'opacity-30 pointer-events-none grayscale' : 'opacity-100'}`}>
+            <div className={`relative z-10 w-full max-w-5xl bg-white/5 backdrop-blur-md border border-white/10 rounded-[3.5rem] p-6 shadow-inner transition-all duration-700 ${(!bookingDate || !bookingTime) ? 'opacity-30 pointer-events-none grayscale' : 'opacity-100'}`}>
                 {tables.map((table) => {
                     const isBooked = bookedTables.includes(table.id);
                     return (
@@ -121,7 +121,7 @@ export default function CustomerBooking() {
 
             <AnimatePresence>
                 {selectedTable && (
-                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
+                    <div className="fixed inset-0 flex items-center justify-center p-6">
                         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSelectedTable(null)} className="absolute inset-0 bg-black/90 backdrop-blur-md" />
                         <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="relative bg-white rounded-[3rem] p-12 w-full max-w-md shadow-2xl text-center">
                             <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6 border border-green-100"><FaCheckCircle className="text-green-500 text-4xl" /></div>

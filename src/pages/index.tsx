@@ -16,7 +16,7 @@ export default function Index() {
       </div>
 
       {/* --- Navigation Bar --- */}
-      <nav className="relative z-50 flex items-center justify-between px-6 md:px-12 py-5 bg-white/95 backdrop-blur-md shadow-md sticky top-0">
+      <nav className="relative z-50 flex items-center justify-between px-6 md:px-12 py-5 bg-white/95 backdrop-blur-md shadow-md top-0">
         <div className="text-2xl font-serif font-bold text-[#3e2723] tracking-tighter flex items-center gap-2">
           <span className="bg-[#4a6741] text-white px-2 py-1 rounded">AROMISTA</span>
         </div>
@@ -40,7 +40,7 @@ export default function Index() {
       </nav>
 
       {/* --- Hero Section --- */}
-      <main className="relative z-10 flex-grow flex flex-col items-center justify-center px-6 text-center py-20">
+      <main className="relative z-10 flex flex-col items-center justify-center px-6 text-center py-20">
         <div className="max-w-4xl">
           <span className="inline-block px-4 py-1 rounded-full bg-[#4a6741]/20 border border-[#4a6741] text-[#a8c69f] text-xs font-bold uppercase tracking-[0.2em] mb-6">
             100% Organic & Handpicked

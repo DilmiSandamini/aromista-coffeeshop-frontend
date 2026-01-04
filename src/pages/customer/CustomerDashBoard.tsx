@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowRight, FaCoffee, FaList, FaUtensils } from "react-icons/fa";
 import { Button } from "../../components/mini_components/Button";
@@ -50,7 +50,7 @@ export default function CustomerDashBoard() {
                     alt="Hero Background" 
                 />
                 <div className="absolute inset-0 bg-black/40"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#1b110b] via-[#1b110b]/40 to-transparent"></div>
+                <div className="absolute inset-0 from-[#1b110b] via-[#1b110b]/40 to-transparent"></div>
 
                 <div className="relative h-full flex flex-col justify-center px-10 md:px-24 lg:px-32">
                     <motion.div
@@ -76,7 +76,7 @@ export default function CustomerDashBoard() {
             </section>
 
             {/* 2. Main Menu Section */}
-            <section className="max-w-[1600px] mx-auto px-6 pb-32">
+            <section className="mx-auto px-6 pb-32">
                 <div className="flex flex-col lg:flex-row gap-12">
                     
                     {/* --- Left Sidebar: Categories (Desktop Only) --- */}
@@ -85,7 +85,7 @@ export default function CustomerDashBoard() {
                             <div className="relative">
                                 <span className="text-[#4a6741] font-black uppercase tracking-[0.4em] text-[10px] block mb-2">Selection</span>
                                 <h3 className="text-3xl font-serif font-bold text-[#3e2723]">Categories</h3>
-                                <div className="w-12 h-[2px] bg-[#bc8a5f] mt-4"></div>
+                                <div className="w-12 bg-[#bc8a5f] mt-4"></div>
                             </div>
                             <nav className="flex flex-col gap-3">
                                 <button 
