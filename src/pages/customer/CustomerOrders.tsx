@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FaCoffee, FaHistory } from "react-icons/fa";
+import { FaCoffee, FaReceipt, FaHistory, FaChevronRight } from "react-icons/fa";
 import { getAllOrdersForUser } from "../../service/order";
 
 export default function CustomerOrders() {
@@ -45,7 +45,7 @@ export default function CustomerOrders() {
                 }}
             >
                 {/* Dark Overlay with Blur */}
-                <div className="absolute inset-0 bg-[#1b110b]/80"></div>
+                <div className="absolute inset-0 bg-[#1b110b]/80 backdrop-blur-[4px]"></div>
             </div>
 
             {/* 2. Scrollable Content Area */}
@@ -80,7 +80,7 @@ export default function CustomerOrders() {
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
                                 key={order._id}
-                                className="backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden transition-all duration-500 group"
+                                className="bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden hover:bg-white/[0.06] transition-all duration-500 group"
                             >
                                 <div className="flex flex-col md:flex-row">
                                     

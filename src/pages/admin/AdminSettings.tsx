@@ -59,7 +59,7 @@ export default function AdminSettings() {
                         <motion.div initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} className="space-y-10">
                             <div className="flex items-center gap-8 pb-10 border-b border-stone-100">
                                 <div className="relative group">
-                                    <div className="w-24 h-24 bg-[#f4f1ea] overflow-hidden border-2 border-[#bc8a5f]/20 group-hover:brightness-75 transition-all">
+                                    <div className="w-24 h-24 bg-[#f4f1ea] rounded-[2rem] overflow-hidden border-2 border-[#bc8a5f]/20 group-hover:brightness-75 transition-all">
                                         <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Admin" alt="Avatar" />
                                     </div>
                                     <button className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">

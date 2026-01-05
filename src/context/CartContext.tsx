@@ -5,7 +5,7 @@ interface CartContextType {
     cartItems: any[];
     addToCart: (item: any) => void;
     removeFromCart: (id: string) => void;
-    updateQuantity: (id: string, delta: number) => void; // අලුතින් එකතු කළා
+    updateQuantity: (id: string, delta: number) => void; 
     clearCart: () => void;
     totalAmount: number;
 }

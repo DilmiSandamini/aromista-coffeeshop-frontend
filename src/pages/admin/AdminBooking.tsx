@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCalendarAlt, FaClock, FaUser, FaChair, FaCheck, FaTimes, FaTrashAlt, FaFilter } from "react-icons/fa";
 import { Table } from "../../components/mini_components/Table";
@@ -93,7 +93,7 @@ export default function AdminBooking() {
                     { label: "Cancelled", count: bookings.filter(b => b.status === 'CANCELLED').length, color: "text-red-400" },
                     { label: "Total", count: bookings.length, color: "text-[#3e2723]" }
                 ].map((stat, i) => (
-                    <div key={i} className="bg-white p-5 border border-stone-100 shadow-sm">
+                    <div key={i} className="bg-white p-5 rounded-[1.5rem] border border-stone-100 shadow-sm">
                         <p className="text-[9px] font-black uppercase tracking-widest text-stone-400 mb-1">{stat.label}</p>
                         <h3 className={`text-2xl font-serif font-bold ${stat.color}`}>{stat.count}</h3>
                     </div>

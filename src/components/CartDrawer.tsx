@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { createOrder } from "../service/order";
 import { showAlert } from "../components/mini_components/Swail";
@@ -45,14 +45,14 @@ export const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
                     <motion.div 
                         initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                         onClick={onClose}
-                        className="fixed inset-0 bg-black/60 backdrop-blur-sm "
+                        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[1000]"
                     />
 
                     {/* Drawer Content */}
                     <motion.div 
                         initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
                         transition={{ type: "spring", damping: 30, stiffness: 300 }}
-                        className="fixed right-0 top-0 h-screen w-full max-w-lg bg-white shadow-2xl flex flex-col"
+                        className="fixed right-0 top-0 h-screen w-full max-w-lg bg-white shadow-2xl z-[1001] flex flex-col"
                     >
                         {/* 1. Header */}
                         <div className="px-8 py-8 border-b border-stone-100 flex justify-between items-center shrink-0">
@@ -90,7 +90,7 @@ export const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
                                                 {/* Silent Quantity Update (No Duplicates) */}
                                                 <div className="flex items-center gap-5 bg-white border border-stone-200 rounded-full px-4 py-2 shadow-sm">
                                                     <button onClick={() => updateQuantity(i.item, -1)} className="text-stone-400 hover:text-[#4a6741] active:scale-75 transition-transform"><FaMinus size={10}/></button>
-                                                    <span className="text-base font-black text-[#3e2723] text-center">{i.quantity}</span>
+                                                    <span className="text-base font-black text-[#3e2723] min-w-[15px] text-center">{i.quantity}</span>
                                                     <button onClick={() => updateQuantity(i.item, 1)} className="text-stone-400 hover:text-[#4a6741] active:scale-75 transition-transform"><FaPlus size={10}/></button>
                                                 </div>
                                                 <div className="text-right">
@@ -117,7 +117,7 @@ export const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
                             
                             <Button 
                                 onClick={handlePlaceOrder} 
-                                className="w-full py-6 bg-[#3e2723] text-white font-black uppercase tracking-[0.3em] text-xs shadow-2xl hover:bg-[#4a6741] transition-all duration-500" 
+                                className="w-full py-6 rounded-[2rem] bg-[#3e2723] text-white font-black uppercase tracking-[0.3em] text-xs shadow-2xl hover:bg-[#4a6741] transition-all duration-500" 
                                 disabled={loading || cartItems.length === 0}
                             >
                                 {loading ? "Placing Order..." : "Confirm & Place Order"}

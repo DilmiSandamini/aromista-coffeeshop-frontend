@@ -1,3 +1,4 @@
+import React from "react";
 import { Outlet } from "react-router-dom";
 import AdminPanel from "../headers/AdminPanel";
 
@@ -27,7 +28,7 @@ function AdminLayout() {
         </header>
 
         {/* Content Area */}
-        <main className="p-8">
+        <main className="p-8 flex-grow">
           <div className="max-w-6xl mx-auto">
             <Outlet />
           </div>

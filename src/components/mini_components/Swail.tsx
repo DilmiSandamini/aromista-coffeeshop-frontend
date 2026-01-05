@@ -27,7 +27,7 @@ export const showAlert = ({
         icon,
         title,
         text,
-        timer: timer ? timer : (showCancelButton ? undefined : 3000), // Confirm box එකක් නම් auto-close වෙන්නේ නැත
+        timer: timer ? timer : (showCancelButton ? undefined : 3000), 
         showCancelButton,
         confirmButtonText,
         cancelButtonText,
@@ -58,6 +58,6 @@ export const showAlert = ({
             popup: 'animate__animated animate__fadeOutDown animate__faster'
         },
         
-        buttonsStyling: true, // SweetAlert default buttons use කරනවානම් true තබන්න
+        buttonsStyling: true,
     });
 };

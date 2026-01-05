@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCoffee, FaBars, FaTimes, FaUserCircle, FaShoppingBasket, FaSignOutAlt, FaUser } from "react-icons/fa";
@@ -55,7 +55,7 @@ export default function CustomerHeader() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full transition-all duration-500 ${
+      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
         isScrolled ? "bg-white/90 backdrop-blur-lg shadow-sm py-3" : "bg-black/10 backdrop-blur-md py-5"
       }`}
     >
@@ -134,7 +134,7 @@ export default function CustomerHeader() {
                       <FaUser size={14} className="text-[#bc8a5f]" /> My Profile
                     </button>
                     
-                    <div className=" bg-stone-100 my-1 mx-4"></div>
+                    <div className="h-[1px] bg-stone-100 my-1 mx-4"></div>
                     
                     {/* Logout Button */}
                     <button 

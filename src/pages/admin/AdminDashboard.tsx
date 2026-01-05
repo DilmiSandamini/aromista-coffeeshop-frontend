@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FaUsers, FaCoffee, FaTruck, FaMoneyBillWave, FaChartLine, FaCalendarCheck } from "react-icons/fa"; 
+import { FaUsers, FaCoffee, FaTruck, FaMoneyBillWave, FaChartLine, FaCalendarCheck } from "react-icons/fa"; // FaCalendarCheck අලුතින් එක් කළා
 import { getAllOrdersForAdmin } from "../../service/order";
 import { getAllUsers } from "../../service/auth";
 import { getAllItemsForAdmin } from "../../service/item";
-import { getAllBookings } from "../../service/booking";
+import { getAllBookings } from "../../service/booking"; 
 import { Table } from "../../components/mini_components/Table";
 
 export default function AdminDashboard() {
@@ -126,7 +126,7 @@ export default function AdminDashboard() {
                 {/* System Pulse Card */}
                 <div className="space-y-6">
                     <h2 className="text-xl font-serif font-bold text-[#3e2723] px-4">System Pulse</h2>
-                    <div className="bg-[#3e2723] rounded-[2.5rem] p-10 text-white shadow-2xl relative overflow-hidden group">
+                    <div className="bg-[#3e2723] rounded-[2.5rem] p-10 text-white shadow-2xl relative overflow-hidden group min-h-[350px]">
                         <FaCoffee className="absolute -right-10 -bottom-10 text-white/5 rotate-12 group-hover:scale-125 transition-transform duration-1000" size={250} />
                         
                         <div className="relative z-10 h-full flex flex-col justify-between">

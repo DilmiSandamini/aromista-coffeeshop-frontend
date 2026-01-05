@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaEdit, FaTrashAlt, FaUserPlus, FaEnvelope, FaPhone, FaShieldAlt } from "react-icons/fa";
 import { Table } from "../../components/mini_components/Table";
 import { Button } from "../../components/mini_components/Button";
@@ -107,7 +107,7 @@ export default function AdminUserManage() {
     setFormData({
       fullname: u.fullname,
       email: u.email,
-      password: "", 
+      password: "", // Security reason: don't show old password
       contactNumber: u.contactNumber.toString(),
       role: u.roles[0],
       status: u.approved
@@ -227,6 +227,7 @@ export default function AdminUserManage() {
         )}
       </Table>
 
+      {/* Pagination Controls කලින් පරිදිම... */}
       <div className="mt-8 flex justify-between items-center bg-white p-4 rounded-3xl border border-stone-100 shadow-sm font-sans">
         <p className="text-xs text-stone-400 font-bold uppercase tracking-widest">Page {pagination.page} of {pagination.pages} ({pagination.total} Users)</p>
         <div className="flex gap-2">

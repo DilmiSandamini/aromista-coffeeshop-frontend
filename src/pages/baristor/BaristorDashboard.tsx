@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaCoffee, FaBell, FaSyncAlt, FaUser, FaMugHot } from "react-icons/fa";
+import { FaCoffee, FaClock, FaCheckCircle, FaBell, FaSyncAlt, FaUser, FaMugHot } from "react-icons/fa";
 import { getAllOrdersForBaristor, updateOrderStatus } from "../../service/order";
 import { showAlert } from "../../components/mini_components/Swail";
 
@@ -54,7 +54,7 @@ export default function BaristorDashboard() {
     return (
         <div className="min-h-screen bg-[#0f0a07] text-stone-200 p-6 md:p-12 overflow-hidden relative font-sans">
             {/* Background Glows */}
-            <div className="absolute top-0 right-0 bg-[#bc8a5f]/5 blur-[100px] rounded-full pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#bc8a5f]/5 blur-[100px] rounded-full pointer-events-none" />
 
             <header className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-6 mb-16 border-b border-white/5 pb-10">
                 <div>
@@ -75,6 +75,7 @@ export default function BaristorDashboard() {
                 </div>
             </header>
 
+            {/* Orders List Container - ඇණවුම් පහළට Load වේ */}
             <div className="relative z-10 max-w-4xl mx-auto space-y-6 overflow-y-auto max-h-[70vh] pr-4 custom-scrollbar">
                 <AnimatePresence mode="popLayout">
                     {orders.map((order, index) => (
@@ -89,8 +90,8 @@ export default function BaristorDashboard() {
                             }`}
                         >
                             {/* User & ID Section */}
-                            <div className="flex items-center gap-6 flex-1 ">
-                                <div className={`w-16 h-16 flex items-center justify-center text-2xl shadow-inner ${
+                            <div className="flex items-center gap-6 flex-1 min-w-[200px]">
+                                <div className={`w-16 h-16 rounded-[1.5rem] flex items-center justify-center text-2xl shadow-inner ${
                                     order.status === 'PROCESSING' ? 'bg-[#bc8a5f] text-white' : 'bg-white/5 text-stone-600'
                                 }`}>
                                     <FaUser size={24} />
@@ -101,6 +102,7 @@ export default function BaristorDashboard() {
                                 </div>
                             </div>
 
+                            {/* Items Section - පේළියට පෙන්වයි */}
                             <div className="flex-1 space-y-2 border-l border-white/5 pl-8 hidden md:block">
                                 {order.items.map((i: any, idx: number) => (
                                     <div key={idx} className="flex items-center gap-3">
@@ -112,7 +114,7 @@ export default function BaristorDashboard() {
                             </div>
 
                             {/* Control Buttons */}
-                            <div className="flex flex-col gap-2 w-full md:w-auto">
+                            <div className="flex flex-col gap-2 w-full md:w-auto min-w-[180px]">
                                 {order.status === "PENDING" ? (
                                     <motion.button
                                         whileHover={{ scale: 1.02 }}

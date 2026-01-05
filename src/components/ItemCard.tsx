@@ -26,15 +26,14 @@ export const ItemCard = ({ item, index }: ItemCardProps) => {
             border md:border-none border-stone-100 rounded-[2.5rem] md:rounded-none shadow-sm md:shadow-none`}
     >
       {/* Image Section */}
-      <div className="w-full md:w-[42%] relative overflow-hidden group">
-        <img
+      <div className="w-full md:w-[42%] h-[300px] md:h-[450px] flex-shrink-0 relative overflow-hidden group rounded-[2.5rem] shadow-md border-4 border-white">        <img
           src={
             item.imageUrl ||
             "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800"
           }
           alt={item.name}
           className={`w-full h-full object-cover transition-transform duration-700 ${
-            !isOutOfStock && "group-hover:scale-105"
+            !isOutOfStock && "group-hover:scale-110"
           } ${isOutOfStock ? "grayscale opacity-50" : ""}`}
         />
         {isOutOfStock && (
