@@ -2,9 +2,6 @@
 
 Aromista is a modern, responsive web application designed for a premium coffee house experience. Built with React and Tailwind CSS, it features a glassmorphism UI and seamless user interactions.
 
-## 🚀 Live Demo
-- **URL:** [මෙහි ඔබේ Frontend Live Link එක දාන්න]
-
 ## ✨ Features
 - **User Authentication:** Login and Registration with real-time validation.
 - **Role-based Access:** Different dashboards for Admin, Customer, and Barista.
