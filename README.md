@@ -23,4 +23,4 @@ Aromista is a modern, responsive web application designed for a premium coffee h
 ## 📦 Installation
 1. Clone the repository:
    ```bash
-   git clone [Your Repository Link]
+   git clone https://github.com/DilmiSandamini/aromista-coffeeshop-frontend.git
