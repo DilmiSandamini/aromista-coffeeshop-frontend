@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { createOrder } from "../service/order";
 import { showAlert } from "../components/mini_components/Swail";

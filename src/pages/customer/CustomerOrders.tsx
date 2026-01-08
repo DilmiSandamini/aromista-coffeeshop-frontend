@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FaCoffee, FaReceipt, FaHistory, FaChevronRight } from "react-icons/fa";
+import { FaCoffee, FaHistory } from "react-icons/fa";
 import { getAllOrdersForUser } from "../../service/order";
 
 export default function CustomerOrders() {

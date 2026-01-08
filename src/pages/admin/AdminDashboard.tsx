@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaUsers, FaCoffee, FaTruck, FaMoneyBillWave, FaChartLine, FaCalendarCheck } from "react-icons/fa"; // FaCalendarCheck අලුතින් එක් කළා
 import { getAllOrdersForAdmin } from "../../service/order";

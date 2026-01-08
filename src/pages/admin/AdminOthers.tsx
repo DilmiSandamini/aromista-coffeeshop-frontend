@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaPlus, FaEdit, FaTrashAlt, FaTag } from "react-icons/fa";
 import { Button } from "../../components/mini_components/Button";
 import { Table } from "../../components/mini_components/Table";

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaCoffee, FaClock, FaCheckCircle, FaBell, FaSyncAlt, FaUser, FaMugHot } from "react-icons/fa";
+import { FaCoffee, FaBell, FaSyncAlt, FaUser, FaMugHot } from "react-icons/fa";
 import { getAllOrdersForBaristor, updateOrderStatus } from "../../service/order";
 import { showAlert } from "../../components/mini_components/Swail";
 

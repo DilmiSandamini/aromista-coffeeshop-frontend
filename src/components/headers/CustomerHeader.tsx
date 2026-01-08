@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCoffee, FaBars, FaTimes, FaUserCircle, FaShoppingBasket, FaSignOutAlt, FaUser } from "react-icons/fa";

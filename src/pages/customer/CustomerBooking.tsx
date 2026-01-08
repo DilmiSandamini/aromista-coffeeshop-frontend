@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaUsers, FaCalendarAlt, FaClock, FaCheckCircle, FaExclamationTriangle } from "react-icons/fa";
+import { FaUsers, FaCheckCircle } from "react-icons/fa";
 import { showAlert } from "../../components/mini_components/Swail";
 import { createBooking, getBookedTables } from "../../service/booking";
 

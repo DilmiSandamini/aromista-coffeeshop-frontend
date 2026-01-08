@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { FaHistory, FaLeaf, FaHeart, FaCoffee } from "react-icons/fa";
 
