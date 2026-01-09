@@ -43,7 +43,6 @@ export default function CustomerHeader() {
     };
   }, []);
 
-  // Mobile menu එක ඇරී ඇති විට scroll වීම වැළැක්වීමට
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -70,9 +69,8 @@ export default function CustomerHeader() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           
-          {/* Logo Section */}
           <Link to="/customer/home" className="flex items-center gap-2 group shrink-0">
-            <div className="bg-[#4a6741] p-1.5 sm:p-2 rounded-xl rotate-[-10deg] group-hover:rotate-0 transition-transform duration-300">
+            <div className="bg-[#4a6741] p-1.5 sm:p-2 rounded-xl rotate-[-10deg] group-hover:rotate-0 transition-transform duration-300 shadow-lg shadow-[#4a6741]/20">
               <FaCoffee className="text-white text-lg sm:text-xl" />
             </div>
             <span className={`text-xl sm:text-2xl font-serif font-black tracking-tighter transition-colors ${isScrolled ? "text-[#3e2723]" : "text-white"}`}>
@@ -80,26 +78,26 @@ export default function CustomerHeader() {
             </span>
           </Link>
 
-          {/* Desktop & Tablet Navigation (Lg screen වලට වැඩි) */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-[10px] xl:text-[11px] font-black uppercase tracking-[0.2em] transition-all hover:scale-105 ${
+                className={`text-[10px] xl:text-[11px] font-black uppercase tracking-[0.2em] transition-all relative group ${
                   location.pathname === link.path
-                    ? (isScrolled ? "text-[#4a6741] border-b-2 border-[#4a6741]" : "text-white border-b-2 border-white")
+                    ? (isScrolled ? "text-[#4a6741]" : "text-white")
                     : (isScrolled ? "text-stone-500 hover:text-[#4a6741]" : "text-stone-200 hover:text-white")
                 }`}
               >
                 {link.name}
+                <span className={`absolute -bottom-1 left-0 w-full h-[2px] transition-transform duration-300 origin-left ${
+                    location.pathname === link.path ? "scale-x-100 bg-current" : "scale-x-0 group-hover:scale-x-100 bg-current"
+                }`}></span>
               </Link>
             ))}
           </nav>
 
-          {/* Action Icons */}
           <div className="flex items-center gap-3 sm:gap-5">
-            {/* Shopping Basket */}
             <button 
               className={`relative p-2 transition-colors ${isScrolled ? "text-[#3e2723]" : "text-white"}`} 
               onClick={() => setIsCartOpen(true)}
@@ -110,13 +108,12 @@ export default function CustomerHeader() {
               </span>
             </button>
 
-            {/* Profile Dropdown */}
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setIsProfileOpen(!isProfileOpen)}
                 className={`flex items-center p-1 transition-transform active:scale-90 ${isScrolled ? "text-[#3e2723]" : "text-white"}`}
               >
-                <FaUserCircle className="text-2xl sm:text-2xl" />
+                <FaUserCircle className="text-2xl sm:text-3xl" />
               </button>
 
               <AnimatePresence>
@@ -155,73 +152,89 @@ export default function CustomerHeader() {
               </AnimatePresence>
             </div>
 
-            {/* Mobile/Tablet Menu Toggle (Lg screen එකට වඩා අඩු නම් පෙන්වයි) */}
             <button
               className={`lg:hidden p-2 z-[110] transition-colors ${
                 isMobileMenuOpen ? "text-[#3e2723]" : (isScrolled ? "text-[#3e2723]" : "text-white")
               }`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+              {isMobileMenuOpen ? <FaTimes size={26} /> : <FaBars size={26} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile & Tablet Navigation Menu overlay */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <>
-              {/* Background Overlay */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[105] lg:hidden"
+                className="fixed inset-0 bg-[#3e2723]/40 backdrop-blur-md z-[105] lg:hidden"
               />
               
-              {/* Menu Content */}
               <motion.div
                 initial={{ x: "100%" }}
                 animate={{ x: 0 }}
                 exit={{ x: "100%" }}
                 transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                className="fixed top-0 right-0 h-full w-[280px] sm:w-[350px] bg-[#FAF7F2] z-[106] lg:hidden shadow-2xl flex flex-col"
+                className="fixed top-0 right-0 h-screen w-[280px] sm:w-[350px] bg-[#FAF7F2] z-[106] lg:hidden shadow-[-20px_0_50px_rgba(0,0,0,0.2)] flex flex-col"
               >
-                <div className="p-8 pt-24 flex flex-col gap-6">
-                  <span className="text-[10px] font-black text-stone-400 uppercase tracking-[0.3em] mb-2">Navigation</span>
+                {/* Mobile Menu Top Color Block */}
+                <div className="h-32 w-full bg-gradient-to-br from-[#4a6741] to-[#364d30] p-8 flex items-end">
+                    <div className="flex items-center gap-3 text-white">
+                        <FaCoffee size={24} />
+                        <span className="font-serif font-black text-xl tracking-widest">AROMISTA</span>
+                    </div>
+                </div>
+
+                <div className="p-8 flex flex-col gap-5 overflow-y-auto flex-grow">
+                  <span className="text-[10px] font-black text-[#bc8a5f] uppercase tracking-[0.4em] mb-2">Menu Navigation</span>
                   {navLinks.map((link) => (
                     <Link
                       key={link.name}
                       to={link.path}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`text-2xl font-serif font-bold transition-all ${
-                        location.pathname === link.path ? "text-[#4a6741] translate-x-2" : "text-[#3e2723] hover:translate-x-2"
+                      className={`text-2xl font-serif font-bold transition-all py-1 ${
+                        location.pathname === link.path 
+                        ? "text-[#4a6741] pl-4 border-l-4 border-[#4a6741]" 
+                        : "text-[#3e2723] hover:text-[#4a6741] hover:pl-2"
                       }`}
                     >
                       {link.name}
                     </Link>
                   ))}
                   
-                  <div className="h-[1px] bg-stone-200 my-4"></div>
+                  <div className="h-[1px] bg-stone-200 my-6"></div>
                   
                   <div className="flex flex-col gap-4">
-                     <span className="text-[10px] font-black text-stone-400 uppercase tracking-[0.3em]">Account</span>
-                     <div className="flex items-center gap-4 p-4 bg-white rounded-3xl border border-stone-100">
-                        <div className="w-12 h-12 rounded-full bg-[#4a6741] flex items-center justify-center text-white text-xl font-bold">
-                           {user?.fullname?.charAt(0) || "U"}
+                     <span className="text-[10px] font-black text-[#bc8a5f] uppercase tracking-[0.4em]">Personal Account</span>
+                     <div className="flex flex-col gap-3 p-5 bg-white rounded-3xl border border-stone-100 shadow-sm">
+                        <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-full bg-[#4a6741] flex items-center justify-center text-white text-xl font-bold shadow-md shadow-[#4a6741]/30">
+                               {user?.fullname?.charAt(0) || "U"}
+                            </div>
+                            <div className="flex flex-col overflow-hidden">
+                               <span className="text-sm font-bold text-[#3e2723] truncate">{user?.fullname || "Guest User"}</span>
+                               <span className="text-[10px] text-stone-400 truncate">{user?.email || "Member"}</span>
+                            </div>
                         </div>
-                        <div className="flex flex-col overflow-hidden">
-                           <span className="text-sm font-bold text-[#3e2723] truncate">{user?.fullname || "Guest User"}</span>
-                           <button onClick={handleLogout} className="text-[10px] font-bold text-red-500 text-left uppercase tracking-tighter">Sign Out</button>
-                        </div>
+                        <button 
+                            onClick={handleLogout} 
+                            className="mt-2 w-full py-3 bg-red-50 text-red-500 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-red-100 transition-colors flex items-center justify-center gap-2"
+                        >
+                           <FaSignOutAlt /> Sign Out Now
+                        </button>
                      </div>
                   </div>
                 </div>
                 
-                {/* Bottom decorative part */}
-                <div className="mt-auto p-8 opacity-20">
-                   <FaCoffee size={80} className="text-[#4a6741]" />
+                <div className="p-8 bg-[#f5f0e8] flex items-center justify-between">
+                   <div className="opacity-40">
+                      <FaCoffee size={40} className="text-[#3e2723]" />
+                   </div>
+                   <p className="text-[9px] text-[#3e2723]/40 font-bold uppercase tracking-widest">© 2026 Aromista Coffee</p>
                 </div>
               </motion.div>
             </>
