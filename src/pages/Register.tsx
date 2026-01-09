@@ -57,7 +57,7 @@ export default function Register() {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden font-sans">
       <div className="absolute inset-0 z-0">
-        <img src="src/assets/image/Coffee Background.jpg" className="w-full h-full object-cover" alt="BG" />
+        <img src={"https://i.ibb.co/Z6Gz2GmP/Coffee-Background.jpg"} className="w-full h-full object-cover" alt="BG" />
         <div className="absolute inset-0 bg-[#1b110b]/40"></div>
       </div>
 

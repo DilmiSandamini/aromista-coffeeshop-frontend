@@ -39,7 +39,7 @@ export default function CustomerOrders() {
             <div 
                 className="fixed inset-0 w-full h-full z-0"
                 style={{
-                    backgroundImage: `url('/src/assets/image/top-view-tasty-coffee-with-coffee-beans.jpg')`,
+                    backgroundImage: `url('https://i.ibb.co/G38W9V0G/top-view-tasty-coffee-with-coffee-beans.jpg')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}

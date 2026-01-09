@@ -8,7 +8,7 @@ export default function Index() {
       <div 
         className="fixed inset-0 z-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: "url(src/assets/image/top-view-tasty-coffee-with-coffee-beans.jpg)",
+          backgroundImage: "url(https://i.ibb.co/G38W9V0G/top-view-tasty-coffee-with-coffee-beans.jpg)",
         }}
       >
         {/* Dark Brownish Overlay */}

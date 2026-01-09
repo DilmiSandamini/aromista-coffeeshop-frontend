@@ -13,7 +13,7 @@ export default function CustomerService() {
         <div className="relative min-h-screen w-full overflow-hidden">
             {/* Fixed Background */}
             <div className="fixed inset-0 z-0">
-                <img className="w-full h-full object-cover brightness-[0.2]" src="/src/assets/image/Coffee Background.jpg" alt="BG" />
+                <img className="w-full h-full object-cover brightness-[0.2]" src={"https://i.ibb.co/G38W9V0G/top-view-tasty-coffee-with-coffee-beans.jpg"} alt="BG" />
                 <div className="absolute inset-0 bg-[#1b110b]/60 backdrop-blur-sm"></div>
             </div>
 

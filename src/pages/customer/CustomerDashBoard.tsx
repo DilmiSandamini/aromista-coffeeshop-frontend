@@ -46,7 +46,7 @@ export default function CustomerDashBoard() {
             <section className="relative h-screen w-full overflow-hidden -mt-24 mb-20">
                 <img 
                     className="absolute inset-0 w-full h-full object-cover" 
-                    src="/src/assets/image/Coffee wallpaper 01.jpeg" 
+                    src={"https://i.ibb.co/W4GhtJ03/Coffee-wallpaper-01.jpg"} 
                     alt="Hero Background" 
                 />
                 <div className="absolute inset-0 bg-black/40"></div>

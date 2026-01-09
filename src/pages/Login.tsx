@@ -64,7 +64,7 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center relative font-sans overflow-hidden">
       <div className="absolute inset-0 z-0 bg-cover bg-center" >
-        <img src="src/assets/image/Coffee Background.jpg" className="w-full h-full object-cover" alt="BG" />
+        <img src={"https://i.ibb.co/Z6Gz2GmP/Coffee-Background.jpg"} className="w-full h-full object-cover" alt="BG" />
         <div className="absolute inset-0 bg-[#1b110b]/40"></div>
       </div>
 
