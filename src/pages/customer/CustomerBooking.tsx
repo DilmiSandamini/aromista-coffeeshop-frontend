@@ -66,7 +66,7 @@ export default function CustomerBooking() {
     return (
         <div className="relative min-h-screen w-full flex flex-col items-center pt-24 pb-10 px-10 overflow-hidden bg-[#FAF9F6]">
             <div className="fixed inset-0 z-0">
-                <img className="w-full h-full object-cover brightness-[0.2]" src="/src/assets/image/top-view-tasty-coffee-with-coffee-beans.jpg" alt="BG" />
+                <img className="w-full h-full object-cover brightness-[0.2]" src={"https://i.ibb.co/Z6Gz2GmP/Coffee-Background.jpg"} alt="BG" />
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
             </div>
 
