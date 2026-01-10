@@ -54,6 +54,7 @@ export default function Login() {
         const userRoles = resData.data.roles || [];
         if (userRoles.includes("ADMIN")) navigate("/admin/dashboard");
         else if (userRoles.includes("CUSTOMER")) navigate("/customer/home");
+        else if (userRoles.includes("BARISTA")) navigate("/baristor/dashboard");
         else navigate("/home");
       }
     } catch (err: any) {
