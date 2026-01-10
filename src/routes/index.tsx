@@ -110,13 +110,7 @@ export default function Router() {
 
           </ Route>
 
-          <Route
-            element={
-              <RequireAuth roles={["BARISTOR"]}>
-                <BaristorDashboard />
-              </RequireAuth>
-            }
-          >
+          <Route>
             <Route path="/baristor/dashboard" element={<BaristorDashboard />} />
           </ Route>
 
